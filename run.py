@@ -1,19 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-
-
 from urllib import quote      #Uncomment line below to use python 2
 #from urllib.parse import quote  #Uncomment line below to use python 3 
-
-
-
-
 from time import sleep
 # %%from pyvirtualdisplay import Display
 # display = Display(visible=0, size=(800, 600))
 # display.start()
-
-
 
 
 #Enter the CSS Selector of the type feild from whatsapp web.
