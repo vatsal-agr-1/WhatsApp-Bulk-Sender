@@ -1,6 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+from urllib import quote      #Uncomment line below to use python 2
+#from urllib.parse import quote  #Uncomment line below to use python 3 
+
+
 from urllib import quote      #Uncomment for python2
 
 #from urllib.parse import quote  #Uncomment line below to use python 3 
