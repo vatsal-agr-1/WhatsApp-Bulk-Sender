@@ -1,7 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+
 from urllib import quote      #Uncomment line below to use python 2
 #from urllib.parse import quote  #Uncomment line below to use python 3 
+
+
+from urllib import quote      #Uncomment for python2
+
+#from urllib.parse import quote  #Uncomment line below to use python 3 
+
 from time import sleep
 # %%from pyvirtualdisplay import Display
 # display = Display(visible=0, size=(800, 600))
@@ -12,12 +19,10 @@ from time import sleep
 
 css_selector = "#main > footer > div._3ee1T._1LkpH.copyable-area > div._3uMse > div > div._3FRCZ.copyable-text.selectable-text"
 
-
 # message to be sent to everyone, you can also read it as a dict from a file with ph nos as keys
 msg = '''
 
 '''     
-
 
 driver = webdriver.Chrome()
 
@@ -27,13 +32,15 @@ phone = []                                                      #enter comma sep
   #  	line=line.strip()
     	if len (line)==10:								   		#skip numbers of length not equal to 10
     		phone.append(str(line))
+     
 # phone.extend(str(raw_input("Enter the comma separated list of numbers (Press enter to skip)\n")).split(','))
 
-msg = quote(msg)  # url-encode the message, use other functios for handling dictionaries, not recommended
+msg = quote(msg)  # url-encode the message, changing not recommeneded.
+
 driver.get("https://web.whatsapp.com")  # first call without delay in order to scan qr code
 sleep(2)
 for number in phone:
-    url = "https://web.whatsapp.com/send?phone=91" + number + "&text=" + msg
+    url = "https://web.whatsapp.com/send?phone=91" + number + "&text=" + msg       # Change 91 to desired country code.
     driver.get(url)
     sleep(0)  # any delay is okay, even 0, but 3-5 seems appropriate
     for i in range(100):
